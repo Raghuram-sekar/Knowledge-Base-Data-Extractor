@@ -1,0 +1,112 @@
+Metadata-Version: 2.4
+Name: Telesto
+Version: 0.1.0
+Summary: Agentic Framework to build a Oil Prediction model using knowledge base.
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: docling
+Requires-Dist: docling-core
+Requires-Dist: pdfplumber>=0.11.7
+Requires-Dist: pypdf>=6.0.0
+Requires-Dist: pypdf2>=3.0.1
+Requires-Dist: tesserocr>=2.8.0
+Requires-Dist: sqlalchemy
+Requires-Dist: psycopg2-binary
+Requires-Dist: numpy
+Requires-Dist: pgvector
+Requires-Dist: boto3>=1.40.38
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: pathlib
+Requires-Dist: pillow>=9.0.0
+Requires-Dist: pytesseract>=0.3.10
+Requires-Dist: easyocr>=1.7.0
+Requires-Dist: opencv-python>=4.8.0
+Requires-Dist: botocore>=1.31.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: isort>=5.10.0; extra == "dev"
+Requires-Dist: flake8>=5.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Provides-Extra: ocr
+Requires-Dist: pytesseract>=0.3.10; extra == "ocr"
+Requires-Dist: easyocr>=1.7.0; extra == "ocr"
+Requires-Dist: opencv-python>=4.8.0; extra == "ocr"
+Provides-Extra: s3
+Requires-Dist: boto3>=1.40.38; extra == "s3"
+Requires-Dist: botocore>=1.31.0; extra == "s3"
+
+# Knowledge Base Data Extractor
+
+A Python tool for extracting and converting PDF documents into structured Markdown format with image extraction capabilities. The project automatically classifies PDFs as scanned (image-based) or normal (text-based) and processes them accordingly using IBM's Docling library and Tesseract OCR.
+
+## 📋 Requirements
+
+- Python 3.12+
+- [uv](https://docs.astral.sh/uv/) package manager
+- Tesseract OCR (for scanned PDF processing)
+
+## 🛠️ Installation
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/Telesto-Amrita/Knowledge-Base-Data-Extractor.git
+   cd Knowledge-Base-Data-Extractor
+   ```
+
+2. **Install Dependencies**
+
+   This project uses `uv` for dependency management. If you don't have `uv` installed:
+
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+
+   Then install project dependencies:
+
+   ```bash
+   uv sync
+   ```
+
+   Then activate the venv
+
+   ```bash
+   source .venv/bin/activate
+   ```
+
+3. **Install Tesseract OCR** (Required for OCR functionality)
+
+   - **Ubuntu/Debian:**
+     ```bash
+     sudo apt-get update
+     sudo apt-get install tesseract-ocr
+     ```
+   - **macOS:**
+     ```bash
+     brew install tesseract
+     ```
+   - **Windows:**
+     Download and install from [Tesseract GitHub releases](https://github.com/UB-Mannheim/tesseract/wiki)
+
+   **Important:**
+
+   - You may need to set the `TESSDATA_PREFIX` environment variable to the directory containing Tesseract's `tessdata` folder (usually `/usr/share/tesseract/tessdata/` or similar). For example:
+     ```bash
+     export TESSDATA_PREFIX=/usr/share/tesseract/tessdata/
+     ```
+   - This ensures Tesseract can find its language data files.
+
+4. Set Environment Variables
+   ```bash
+   cp env.example .env
+   ```
+
+5. To run Parser
+   ```bash
+   uv run src/run_parser.py
+   ```
+
+---
