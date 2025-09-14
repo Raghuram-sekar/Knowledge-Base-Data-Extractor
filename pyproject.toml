@@ -7,4 +7,8 @@ requires-python = ">=3.12"
 dependencies = [
     "docling",
     "docling-core",
+    "pdfplumber>=0.11.7",
+    "pypdf>=6.0.0",
+    "pypdf2>=3.0.1",
+    "tesserocr>=2.8.0",
 ]

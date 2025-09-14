@@ -20,17 +20,17 @@ def process_scanned_pdfs(input_folder_path: str, output_base_dir: str = "data_do
     output_base = Path(output_base_dir)
     
     if not input_folder.exists() or not input_folder.is_dir():
-        print(f"Input folder does not exist: {input_folder}")
+        print(f"❌ Input folder does not exist: {input_folder}")
         return
     
     # Find all PDF files in the folder
     pdf_files = list(input_folder.glob("*.pdf"))
     
     if not pdf_files:
-        print(f"No PDF files found in: {input_folder}")
+        print(f"❌ No PDF files found in: {input_folder}")
         return
     
-    print(f"Found {len(pdf_files)} PDF files to process")
+    print(f"📁 Found {len(pdf_files)} PDF files to process")
     
     # Pipeline options for OCR
     pipeline_options = PdfPipelineOptions()
@@ -47,7 +47,7 @@ def process_scanned_pdfs(input_folder_path: str, output_base_dir: str = "data_do
     # Process each PDF file
     for pdf_file in pdf_files:
         try:
-            print(f"\nProcessing (OCR): {pdf_file.name}")
+            print(f"\n📄 Processing (OCR): {pdf_file.name}")
             
             # Create structured output directory for this PDF
             pdf_output_dir = output_base / pdf_file.stem
@@ -63,13 +63,13 @@ def process_scanned_pdfs(input_folder_path: str, output_base_dir: str = "data_do
                 image_mode=ImageRefMode.REFERENCED
             )
             
-            print(f"OCR Markdown saved: {md_filename}")
+            print(f"  ✅ OCR Markdown saved: {md_filename}")
             
         except Exception as e:
-            print(f"Error processing {pdf_file.name}: {str(e)}")
+            print(f"  ❌ Error processing {pdf_file.name}: {str(e)}")
             continue
     
-    print(f"\nOCR Processing complete! Output saved in: {output_base}")
+    print(f"\n✅ OCR Processing complete! Output saved in: {output_base}")
 
 
 def main():
