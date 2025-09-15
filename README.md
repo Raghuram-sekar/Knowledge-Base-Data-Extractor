@@ -56,9 +56,9 @@ A Python tool for extracting and converting PDF documents into structured Markdo
 
    **Important:**
 
-   - You may need to set the `TESSDATA_PREFIX` environment variable to the directory containing Tesseract's `tessdata` folder (usually `/usr/share/tesseract-ocr/4.00/tessdata` or similar). For example:
+   - You may need to set the `TESSDATA_PREFIX` environment variable to the directory containing Tesseract's `tessdata` folder (usually `/usr/share/tesseract/tessdata/` or similar). For example:
      ```bash
-     export TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/
+     export TESSDATA_PREFIX=/usr/share/tesseract/tessdata/
      ```
    - This ensures Tesseract can find its language data files.
 
