@@ -1,0 +1,16 @@
+# Virtual environment
+.venv/
+
+# data extractor outputs
+data/
+data_docling/
+Telesto Data/
+data_ocr/
+data_docling_ocr/
+data_docling_output/
+
+# exclude pdfs
+*.pdf
+
+# exclude all the __pycache__ directories
+**/__pycache__/
