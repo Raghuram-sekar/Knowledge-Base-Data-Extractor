@@ -6,7 +6,7 @@ from docling.datamodel.pipeline_options import PdfPipelineOptions, TesseractCliO
 from docling.document_converter import DocumentConverter, PdfFormatOption
 
 
-def process_scanned_pdfs(input_folder_path: str, output_base_dir: str = "data_docling_ocr"):
+def process_pdf_ocr_folder(input_folder_path: str, output_base_dir: str = "data_docling_ocr"):
     """
     Process all scanned PDF files in a folder with OCR and call process_pdf_ocr for each file.
     Args:
@@ -71,7 +71,7 @@ def main():
     input_folder = workspace_path / "data_ocr"
     
     # Process all PDFs in the folder with OCR
-    process_scanned_pdfs(str(input_folder))
+    process_pdf_ocr_folder(str(input_folder))
 
 
 if __name__ == "__main__":
