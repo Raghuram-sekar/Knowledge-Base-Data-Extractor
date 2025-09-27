@@ -6,14 +6,18 @@
 
 # data extractor outputs
 data/
-data_docling/
-Telesto Data/
-data_ocr/
-data_docling_ocr/
-data_docling_output/
+output/
 
-# exclude pdfs
+# exclude raw data
 *.pdf
+*.zip
+*.png
+*.jpg
+*.jpeg
 
 # exclude all the __pycache__ directories
 **/__pycache__/
+.DS_Store
+
+# exclude .env files
+.env*
