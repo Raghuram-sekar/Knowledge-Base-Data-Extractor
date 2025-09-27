@@ -21,7 +21,7 @@ class EasyOCREngine(OCREngine):
                 - user_network_directory: Custom network directory
                 - download_enabled: Enable model downloads (default: True)
         """
-        self.logger = logger.get_logger()
+        self.logger = logger.get_logger(__name__)
         self.reader = None
         super().__init__(**kwargs)
     

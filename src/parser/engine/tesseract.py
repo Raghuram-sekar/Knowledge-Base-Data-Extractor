@@ -20,7 +20,7 @@ class TesseractEngine(OCREngine):
                 - psm: Page Segmentation Mode (default: 6)
                 - config: Additional tesseract config options
         """
-        self.logger = logger.get_logger()
+        self.logger = logger.get_logger(__name__)
         super().__init__(**kwargs)
     
     def _initialize(self) -> None:

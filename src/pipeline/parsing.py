@@ -9,30 +9,25 @@ from core.config import config
 
 def main():
     """Main parsing pipeline function."""
-    log = logger.get_logger()
+    log = logger.get_logger(__name__)
     
     try:
         # Create parser using configuration from .env file
-        storage_type = config.OUTPUT_STORAGE.lower()  # LOCAL or S3
-        ocr_engine = config.OCR_ENGINE.lower()  # TESSERACT or EASYOCR
+        log.info(f"Input storage: {config.INPUT_STORAGE}, Output storage: {config.OUTPUT_STORAGE}, OCR engine: {config.OCR_ENGINE}")
+        parser = create_parser()  # Now automatically uses config values
         
-        log.info(f"Input storage: {config.INPUT_STORAGE}, Output storage: {config.OUTPUT_STORAGE}, OCR engine: {ocr_engine}")
-        parser = create_parser(storage_type=storage_type, ocr_engine=ocr_engine)
-        
-        # Get input and output paths from config
+        # Get input and output paths from config (these are the defaults)
         input_path = config.INPUT_PATH
         output_path = config.OUTPUT_PATH
         
         log.info(f"Input path: {input_path}")
         log.info(f"Output path: {output_path}")
+        log.info(f"Parallel processing: {'ON' if config.PARALLEL_PROCESSING else 'OFF'}")
+        if config.PARALLEL_PROCESSING:
+            log.info(f"Max workers: {config.MAX_WORKERS}")
         
-        # Use batch_parse function which handles both local and S3 paths intelligently
-        result = parser.batch_parse(
-            directory=input_path,
-            output_base=output_path,
-            pattern="*.pdf",
-            input_storage_type=config.INPUT_STORAGE
-        )
+        # Use batch_parse function which now uses config paths by default
+        result = parser.batch_parse()
         
         if result['status'] == 'error':
             log.error(f"❌ Batch processing failed: {result['error']}")

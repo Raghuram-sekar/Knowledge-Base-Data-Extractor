@@ -31,7 +31,7 @@ class S3Client:
         self.access_key = access_key or config.S3_ACCESS_KEY
         self.secret_key = secret_key or config.S3_SECRET_KEY
         self.region = region or config.S3_REGION or "us-east-1"
-        self.logger = logger.get_logger()
+        self.logger = logger.get_logger(__name__)
         
         if not all([self.access_key, self.secret_key]):
             raise ValueError("S3 access key and secret key are required")

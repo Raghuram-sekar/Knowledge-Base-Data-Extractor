@@ -19,7 +19,7 @@ class LocalStorage(Storage):
         """
         super().__init__()
         self.base_path = Path(base_path) if base_path else Path.cwd()
-        self.logger = logger.get_logger()
+        self.logger = logger.get_logger(__name__)
         self._ensure_base_path()
 
     def _ensure_base_path(self) -> None:
