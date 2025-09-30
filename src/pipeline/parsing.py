@@ -76,10 +76,21 @@ def main():
             if file_result.get('status') == 'success':
                 metadata = file_result.get('metadata', {})
                 file_name = Path(file_result.get('source_file', '')).name
+                output_files = file_result.get('output_files', {})
                 
                 log.info(f"✅ {file_name}:")
                 log.info(f"   Pages: {metadata.get('page_count', 'Unknown')}")
                 log.info(f"   OCR used: {metadata.get('ocr_enabled', False)}")
+                log.info(f"   Processing time: {metadata.get('performance_metrics', {}).get('processing_time_seconds', 0):.2f}s")
+                
+                # Show output files generated
+                log.info(f"   Files generated:")
+                if output_files.get('markdown'):
+                    log.info(f"     • Markdown: {Path(output_files['markdown']).name}")
+                if output_files.get('json'):
+                    log.info(f"     • JSON: {Path(output_files['json']).name}")
+                if output_files.get('metadata'):
+                    log.info(f"     • Metadata: {Path(output_files['metadata']).name}")
                 
                 if metadata.get('images_saved', 0) > 0:
                     log.info(f"   Images extracted: {metadata.get('images_saved', 0)}")

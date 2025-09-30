@@ -15,6 +15,7 @@ import json
 import psutil
 import gc
 import tempfile
+from datetime import datetime
 from pathlib import Path
 from typing import Optional, Union, Dict, Any, List
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -186,11 +187,18 @@ class Parser:
     def _process_pdf(self, pdf_file: Path, output_base: Path, do_ocr: bool, original_filename: Optional[str] = None) -> Dict[str, Any]:
         """Process a single PDF file with docling."""
         start_time = time.time()
+        timing_breakdown = {}
         
         try:
             # Use original filename if provided, otherwise use the current file's name
             display_name = original_filename if original_filename else pdf_file.name
             self.logger.info(f"Processing: {display_name} (OCR: {do_ocr})")
+            
+            # Get file size for performance metrics
+            file_size_mb = pdf_file.stat().st_size / (1024 * 1024)
+            
+            # Pipeline setup timing
+            pipeline_start = time.time()
             
             # Configure docling pipeline
             pipeline_options = PdfPipelineOptions()
@@ -221,8 +229,12 @@ class Parser:
                 }
             )
             
-            # Convert document
+            timing_breakdown['pipeline_setup'] = time.time() - pipeline_start
+            
+            # Document conversion timing
+            conversion_start = time.time()
             result = doc_converter.convert(pdf_file)
+            timing_breakdown['document_conversion'] = time.time() - conversion_start
             
             # Create sanitized folder name based on original filename
             if original_filename:
@@ -239,6 +251,7 @@ class Parser:
                 output_folder = f"{str(output_base).strip('/')}/{pdf_stem}"
                 markdown_file_path = f"{output_folder}/{pdf_stem}.md"
                 json_file_path = f"{output_folder}/{pdf_stem}.json"
+                metadata_file_path = f"{output_folder}/metadata.json"
                 images_folder = f"{output_folder}/images"
             else:
                 # For local storage
@@ -246,56 +259,96 @@ class Parser:
                 output_dir.mkdir(parents=True, exist_ok=True)
                 markdown_file_path = str(output_dir / f"{pdf_stem}.md")
                 json_file_path = str(output_dir / f"{pdf_stem}.json")
+                metadata_file_path = str(output_dir / "metadata.json")
                 images_folder = str(output_dir / "images")
                 # Create images directory if local
                 if config.SAVE_IMAGES:
                     (output_dir / "images").mkdir(exist_ok=True)
             
-            # Save markdown content
+            # Markdown generation and save timing
+            markdown_start = time.time()
             markdown_content = result.document.export_to_markdown()
+            timing_breakdown['markdown_generation'] = time.time() - markdown_start
+            
+            markdown_save_start = time.time()
             self.output_storage.save(markdown_content, markdown_file_path, format='text')
+            timing_breakdown['markdown_save'] = time.time() - markdown_save_start
             
             # Save JSON metadata
             doc_dict = result.document.export_to_dict()
             self.output_storage.save(doc_dict, json_file_path, format='json')
             
             # Process and save images if enabled
+            image_processing_start = time.time()
             saved_images = []
             image_descriptions = {}
+            image_files = []
             
             if config.SAVE_IMAGES and result.document.pictures:
                 saved_images, image_descriptions = self._process_images(
                     result.document.pictures, images_folder, pdf_stem
                 )
+                # Extract just the filenames for metadata
+                image_files = [Path(img_path).name for img_path in saved_images]
             
-            # Calculate processing time
-            processing_time = time.time() - start_time
+            timing_breakdown['image_processing'] = time.time() - image_processing_start
             
-            # Prepare metadata
+            # Calculate total processing time
+            total_processing_time = time.time() - start_time
+            timing_breakdown['total_processing'] = total_processing_time
+            
+            # Extract text for analysis
+            text_content = markdown_content
+            text_length = len(text_content.strip())
+            
+            # Create comprehensive metadata
             metadata = {
-                'source_file': original_filename if original_filename else str(pdf_file),
-                'output_directory': output_folder if config.OUTPUT_STORAGE == "S3" else str(output_dir),
-                'page_count': len(result.document.pages),
-                'ocr_enabled': pipeline_options.do_ocr,
-                'images_saved': len(saved_images),
-                'processing_time': processing_time,
-                'document_structure': {
-                    'has_tables': bool(result.document.tables),
-                    'has_figures': bool(result.document.pictures),
-                    'has_formulas': any(hasattr(page, 'equations') and page.equations for page in result.document.pages)
+                "source_file": original_filename if original_filename else str(pdf_file),
+                "processing_timestamp": datetime.now().isoformat(),
+                "ocr_enabled": pipeline_options.do_ocr,
+                "ocr_engine": type(self.ocr_engine).__name__,
+                "storage_backend": type(self.output_storage).__name__,
+                "output_directory": output_folder if config.OUTPUT_STORAGE == "S3" else str(output_dir),
+                "markdown_file": f"{pdf_stem}.md",
+                "page_count": len(result.document.pages),
+                "images_generated": config.SAVE_IMAGES and len(result.document.pictures) > 0,
+                "images_saved": len(saved_images),
+                "image_files": image_files,
+                "image_descriptions": image_descriptions,
+                "tables_extracted": config.EXTRACT_TABLES,
+                "formulas_extracted": config.EXTRACT_FORMULAS,
+                "figures_extracted": config.EXTRACT_FIGURES,
+                "processing_options": {
+                    "image_format": config.IMAGE_FORMAT,
+                    "image_quality": config.IMAGE_QUALITY,
+                    "image_dpi": config.IMAGE_DPI,
+                    "image_scale": config.IMAGE_SCALE,
+                    "extract_tables": config.EXTRACT_TABLES,
+                    "extract_formulas": config.EXTRACT_FORMULAS,
+                    "extract_figures": config.EXTRACT_FIGURES,
+                    "force_full_page_ocr": config.FORCE_FULL_PAGE_OCR,
+                    "input_storage_type": config.INPUT_STORAGE
                 },
-                'extraction_settings': {
-                    'extract_tables': config.EXTRACT_TABLES,
-                    'extract_formulas': config.EXTRACT_FORMULAS,
-                    'extract_figures': config.EXTRACT_FIGURES,
-                    'generate_image_descriptions': config.GENERATE_IMAGE_DESCRIPTIONS
+                "document_structure": {
+                    "has_tables": bool(result.document.tables),
+                    "has_figures": bool(result.document.pictures),
+                    "has_formulas": any(hasattr(page, 'equations') and page.equations for page in result.document.pages),
+                    "text_length": text_length,
+                    "images_count": len(result.document.pictures) if result.document.pictures else 0
+                },
+                "performance_metrics": {
+                    "file_size_mb": round(file_size_mb, 2),
+                    "processing_time_seconds": round(total_processing_time, 3),
+                    "pages_per_second": round(len(result.document.pages) / total_processing_time, 2) if total_processing_time > 0 else 0,
+                    "mb_per_second": round(file_size_mb / total_processing_time, 2) if total_processing_time > 0 else 0,
+                    "timing_breakdown": {k: round(v, 3) for k, v in timing_breakdown.items()}
                 }
             }
             
-            if image_descriptions:
-                metadata['image_descriptions'] = image_descriptions
+            # Save metadata.json file
+            self.output_storage.save(metadata, metadata_file_path, format='json')
             
-            self.logger.info(f"✅ Successfully processed {display_name} in {processing_time:.2f}s")
+            self.logger.info(f"✅ Successfully processed {display_name} in {total_processing_time:.2f}s")
             
             return {
                 'status': 'success',
@@ -303,6 +356,7 @@ class Parser:
                 'output_files': {
                     'markdown': markdown_file_path,
                     'json': json_file_path,
+                    'metadata': metadata_file_path,
                     'images': saved_images
                 },
                 'metadata': metadata
