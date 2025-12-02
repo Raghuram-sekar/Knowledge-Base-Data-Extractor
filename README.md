@@ -1,6 +1,14 @@
-# Knowledge Base Data Extractor
+# 🌍 Telesto Knowledge Base Data Extractor
 
-A Python tool for extracting and converting PDF documents into structured Markdown format with image extraction capabilities. The project automatically classifies PDFs as scanned (image-based) or normal (text-based) and processes them accordingly using IBM's Docling library and Tesseract OCR.
+An advanced Python tool for extracting and processing geological documents and well log data. The system automatically classifies PDFs as scanned or normal documents, processes them using IBM's Docling library and Tesseract OCR, and provides AI-powered geological analysis capabilities.
+
+## 🎯 Project Overview
+
+This project is designed for **geological data analysis** and **oil & gas exploration** with capabilities for:
+- **Document Processing**: Extract knowledge from research papers, technical reports, and geological documents
+- **Well Log Analysis**: Process LAS files for depositional environment identification
+- **AI-Powered Insights**: Automated geological interpretation with confidence scoring
+- **Knowledge Base Construction**: Build searchable geological knowledge repositories
 
 ## 📋 Requirements
 
@@ -59,14 +67,44 @@ A Python tool for extracting and converting PDF documents into structured Markdo
      ```
    - This ensures Tesseract can find its language data files.
 
-4. Set Environment Variables
+4. **Set Environment Variables**
    ```bash
    cp env.example .env
    ```
 
-5. To run Parser
+5. **Run Parser**
    ```bash
    uv run src/run_parser.py
    ```
+
+## 📁 Project Structure
+
+```
+Knowledge-Base-Data-Extractor/
+├── docs/                           # 📚 Organized documentation
+│   ├── project-planning/           # Project SOW, strategy, approach
+│   ├── technical-specifications/   # Data pipelines, formats, specs
+│   ├── cost-analysis/             # Financial analysis and estimates
+│   ├── research-data/             # Research materials and analysis
+│   └── system-architecture/       # System design and deployment
+├── src/                           # 💻 Source code
+├── data/                          # 📊 Input/output data
+├── Telesto Data/                  # 🏺 Geological data (well logs, papers)
+├── services/                      # 🔧 Enhanced microservices architecture
+├── frontend/                      # 🖥️ Web dashboard interface
+└── archived-data/                 # 📦 Archived and legacy files
+```
+
+## 📖 Documentation
+
+All project documentation has been organized into logical categories:
+
+- **📋 Project Planning**: [docs/project-planning/](./docs/project-planning/) - SOW, project approach, strategy
+- **🔧 Technical Specs**: [docs/technical-specifications/](./docs/technical-specifications/) - Data pipelines, formats
+- **💰 Cost Analysis**: [docs/cost-analysis/](./docs/cost-analysis/) - Financial planning and estimates  
+- **📊 Research Data**: [docs/research-data/](./docs/research-data/) - Research materials and analysis
+- **🏗️ System Architecture**: [docs/system-architecture/](./docs/system-architecture/) - System design guides
+
+See [docs/README.md](./docs/README.md) for complete documentation index.
 
 ---
