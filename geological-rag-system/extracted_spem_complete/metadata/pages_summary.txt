@@ -1,0 +1,103 @@
+SPEM DOCUMENT EXTRACTION SUMMARY
+==================================================
+
+Document: data\SPEM_Strata_Log_Signature_SS.pdf
+Total Pages: 23
+Extraction Date: 2025-11-25T10:11:06.139182
+
+CONTENT SUMMARY:
+- Total Images: 24
+- Total Text Blocks: 84
+- Total Tables: 0
+- Content Types: images, text
+
+GEOLOGICAL KEYWORDS FOUND:
+- CAL
+- GR
+- HST
+- LST
+- MFS
+- RD
+- RS
+- RT
+- SB
+- SP
+- TS
+- TST
+- accommodation space
+- aeolian
+- anhydrite
+- barrier
+- base level
+- basin
+- beach
+- calcareous
+- channel
+- coal
+- conglomerate
+- delta
+- density
+- dolomite
+- evaporite
+- fining upward
+- fluvial
+- fracture
+- gamma ray
+- highstand systems tract
+- limestone
+- log character
+- log response
+- lowstand systems tract
+- marine
+- maximum flooding surface
+- neutron
+- parasequence
+- porosity
+- relative sea level
+- reservoir
+- resistivity
+- sand
+- sandstone
+- seal
+- sequence stratigraphic
+- shale
+- shelf
+- shoreface
+- siliceous
+- sonic
+- source rock
+- spontaneous potential
+- stacking pattern
+- submarine fan
+- systems tract
+- tidal
+- transgressive surface
+- transgressive systems tract
+- turbidite
+- unconformity
+
+PAGE-BY-PAGE SUMMARY:
+------------------------------
+Page 1: 84 words of text; 1 images (well_log); Geological content: sequence stratigraphic, SP, stacking pattern, basin, GR
+Page 2: 257 words of text; 1 images (well_log); Geological content: sequence stratigraphic, CAL, stacking pattern, RT, basin
+Page 3: 164 words of text; 1 images (well_log); Geological content: sequence stratigraphic, SP, log response, MFS, RT
+Page 4: 189 words of text; 1 images (well_log); Geological content: CAL, stacking pattern, base level, systems tract, TST
+Page 5: 197 words of text; Geological content: CAL, HST, stacking pattern, SB, systems tract
+Page 6: 93 words of text; 1 images (well_log); Geological content: SP, reservoir, RT, seal, GR
+Page 7: 232 words of text; 1 images (well_log); Geological content: porosity, RD, CAL, SP, shale
+Page 8: 411 words of text; Geological content: CAL, dolomite, log character, sonic, sequence stratigraphic
+Page 9: 302 words of text; Geological content: limestone, sonic, marine, porosity, RD
+Page 10: 197 words of text; 1 images (well_log); Geological content: submarine fan, marine, turbidite, RD, fining upward
+Page 11: 130 words of text; Geological content: turbidite, aeolian, evaporite, CAL, SP
+Page 12: 12 words of text; 2 images (well_log); Geological content: GR
+Page 13: 230 words of text; Geological content: parasequence, MFS, stacking pattern, RT, basin
+Page 14: 22 words of text; 1 images (well_log)
+Page 15: 207 words of text; 1 images (well_log); Geological content: RD, SP, RT, basin, GR
+Page 16: 337 words of text; 3 images (well_log, core_photo, figure); Geological content: RD, SP, RT, GR, sand
+Page 17: 448 words of text; Geological content: RD, CAL, SP, calcareous, RT
+Page 18: 491 words of text; Geological content: marine, RD, CAL, SP, RT
+Page 19: 399 words of text; Geological content: siliceous, CAL, dolomite, SP, fracture
+Page 20: 431 words of text; Geological content: CAL, SP, log response, MFS, RT
+Page 21: 471 words of text; Geological content: marine, RD, parasequence, CAL, accommodation space
+Page 22: 201 words of text; 4 images (other); Geological content: delta, sequence stratigraphic, beach, shoreface, CAL
+Page 23: 102 words of text; 6 images (well_log, other); Geological content: relative sea level, RD, SP, LST, log response

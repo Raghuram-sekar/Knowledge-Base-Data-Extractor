@@ -1,0 +1,136 @@
+SPEM DOCUMENT GEOLOGICAL KEYWORDS
+================================================================================
+
+Log Curves:
+  - CAL
+  - GR
+  - RD
+  - RS
+  - RT
+  - SP
+  - density
+  - gamma ray
+  - neutron
+  - resistivity
+  - sonic
+  - spontaneous potential
+
+Sequence Stratigraphy:
+  - HST
+  - LST
+  - MFS
+  - SB
+  - TS
+  - TST
+  - accommodation space
+  - base level
+  - highstand systems tract
+  - lowstand systems tract
+  - maximum flooding surface
+  - parasequence
+  - relative sea level
+  - sequence stratigraphic
+  - stacking pattern
+  - systems tract
+  - transgressive surface
+  - transgressive systems tract
+
+Depositional Environments:
+  - barrier
+  - basin
+  - beach
+  - channel
+  - delta
+  - fluvial
+  - marine
+  - shelf
+  - shoreface
+  - submarine fan
+  - tidal
+  - turbidite
+
+Lithology:
+  - anhydrite
+  - calcareous
+  - coal
+  - conglomerate
+  - dolomite
+  - evaporite
+  - limestone
+  - sand
+  - sandstone
+  - shale
+  - siliceous
+
+Reservoir Terms:
+  - fracture
+  - porosity
+  - reservoir
+  - seal
+  - source rock
+
+ALL KEYWORDS (ALPHABETICAL):
+----------------------------------------
+ 1. CAL
+ 2. GR
+ 3. HST
+ 4. LST
+ 5. MFS
+ 6. RD
+ 7. RS
+ 8. RT
+ 9. SB
+10. SP
+11. TS
+12. TST
+13. accommodation space
+14. aeolian
+15. anhydrite
+16. barrier
+17. base level
+18. basin
+19. beach
+20. calcareous
+21. channel
+22. coal
+23. conglomerate
+24. delta
+25. density
+26. dolomite
+27. evaporite
+28. fining upward
+29. fluvial
+30. fracture
+31. gamma ray
+32. highstand systems tract
+33. limestone
+34. log character
+35. log response
+36. lowstand systems tract
+37. marine
+38. maximum flooding surface
+39. neutron
+40. parasequence
+41. porosity
+42. relative sea level
+43. reservoir
+44. resistivity
+45. sand
+46. sandstone
+47. seal
+48. sequence stratigraphic
+49. shale
+50. shelf
+51. shoreface
+52. siliceous
+53. sonic
+54. source rock
+55. spontaneous potential
+56. stacking pattern
+57. submarine fan
+58. systems tract
+59. tidal
+60. transgressive surface
+61. transgressive systems tract
+62. turbidite
+63. unconformity

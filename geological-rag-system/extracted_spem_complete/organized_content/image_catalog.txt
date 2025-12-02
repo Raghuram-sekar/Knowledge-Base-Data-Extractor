@@ -1,0 +1,299 @@
+COMPLETE SPEM DOCUMENT IMAGE CATALOG
+================================================================================
+
+PAGE 1 IMAGES:
+------------------------------
+Image 1: spem_img_001_000_5f62653b
+  File: extracted_spem_complete\images\spem_img_001_000_5f62653b.jpeg
+  Type: well_log
+  Size: 754x170
+  Caption: Well logs and sequence stratigraphic interpretation 
+The associated pages are focused on well logs and building sequences stratigraphic 
+models for both 
+• 
+Clastic and
+  Geological Terms: sequence stratigraphic; GR; reddish_coloration; grayscale_pattern; horizontal_log_pattern; gamma_ray_log; sequence_stratigraphic_content
+  Context: Well logs and sequence stratigraphic interpretation 
+The associated pages are focused on well logs and building sequences stratigraphic 
+models for both 
+• 
+Clastic and 
+• 
+Carbonate depositional syst...
+
+PAGE 2 IMAGES:
+------------------------------
+Image 2: spem_img_002_000_672cff88
+  File: extracted_spem_complete\images\spem_img_002_000_672cff88.jpeg
+  Type: well_log
+  Size: 764x370
+  Geological Terms: sequence stratigraphic; CAL; RT; basin; GR; TS; reddish_coloration; grayscale_pattern
+  Context: The following pages are focused on the use of well logs to build sequences stratigraphic 
+models of depositional systems. For this process well logs are primarily used to establish 
+the grain size and...
+
+PAGE 3 IMAGES:
+------------------------------
+Image 3: spem_img_003_000_8a0f544e
+  File: extracted_spem_complete\images\spem_img_003_000_8a0f544e.jpeg
+  Type: well_log
+  Size: 350x261
+  Geological Terms: SP; MFS; HST; GR; SB; sand; RS; TS; grayscale_pattern
+  Context: changes in grain size. The sections that follow initally focus on
+shallow water clastics and then move on to their response to 
+At the star
+of sequen
+one must 
+of sequen
+MOST imp
+the FIRST 
+when usin
+...
+
+PAGE 4 IMAGES:
+------------------------------
+Image 4: spem_img_004_000_1a2f54de
+  File: extracted_spem_complete\images\spem_img_004_000_1a2f54de.png
+  Type: well_log
+  Size: 559x424
+  Geological Terms: shelf; RD; fining upward; parasequence; CAL; SP; LST; stacking pattern; RT; lowstand systems tract; GR; systems tract; RS; TS; reddish_coloration; grayscale_pattern
+  Context: In both clastics and carbonates the second and often co-incident step in the interpretation 
+of well logs and cores is the use of parasequence stacking patterns (the vertical 
+occurrence of repeated c...
+
+PAGE 6 IMAGES:
+------------------------------
+Image 5: spem_img_006_000_e9e9b018
+  File: extracted_spem_complete\images\spem_img_006_000_e9e9b018.png
+  Type: well_log
+  Size: 554x424
+  Geological Terms: SP; reservoir; RT; seal; GR; RS; source rock; reddish_coloration; grayscale_pattern
+  Context: Value of sequence stratigraphy built from well logs 
+Interpretations that use well logs for sequence stratigraphy should be tied 
+to biostratigraphy so they can be used to correlate and analyze sedime...
+
+PAGE 7 IMAGES:
+------------------------------
+Image 6: spem_img_007_000_f1a358d4
+  File: extracted_spem_complete\images\spem_img_007_000_f1a358d4.jpeg
+  Type: well_log
+  Size: 690x361
+  Caption: (source: Emery, 1996) 
+Resistivity logs 
+This log measures the bulk resistivity (the reciprocal of conductivity) of the form
+  Geological Terms: porosity; CAL; GR; resistivity; TS; grayscale_pattern; resistivity_log
+  Context: (source: Emery, 1996) 
+Resistivity logs 
+This log measures the bulk resistivity (the reciprocal of conductivity) of the formation. 
+Resistivity is defined as the degree to which a substance resists th...
+
+PAGE 10 IMAGES:
+------------------------------
+Image 7: spem_img_010_000_c1601830
+  File: extracted_spem_complete\images\spem_img_010_000_c1601830.png
+  Type: well_log
+  Size: 546x410
+  Geological Terms: marine; turbidite; RD; SP; tidal; RT; shale; GR; sand; RS; TS; channel; grayscale_pattern
+  Context: • 
+Cleaning-up trend (funnel shape): a gradual upward decrease in gamma response.
+In shallow marine settings, this trend reflects a change from shale-rich into sand-
+rich lithology and upward increase...
+
+PAGE 12 IMAGES:
+------------------------------
+Image 8: spem_img_012_000_b9ea3908
+  File: extracted_spem_complete\images\spem_img_012_000_b9ea3908.png
+  Type: well_log
+  Size: 462x639
+  Caption: Sequence Stratigraphy > Well Log Interpretations > High Frequency C
+  Geological Terms: GR; grayscale_pattern; gamma_ray_log; sequence_stratigraphic_content
+  Context: Sequence Stratigraphy > Well Log Interpretations > High Frequency Clastic Se...
+
+Image 9: spem_img_012_001_9ba5802c
+  File: extracted_spem_complete\images\spem_img_012_001_9ba5802c.png
+  Type: well_log
+  Size: 350x137
+  Geological Terms: GR; reddish_coloration; grayscale_pattern
+  Context: Sequence Stratigraphy > Well Log Interpretations > High Frequ...
+
+PAGE 14 IMAGES:
+------------------------------
+Image 10: spem_img_014_000_496d825a
+  File: extracted_spem_complete\images\spem_img_014_000_496d825a.png
+  Type: well_log
+  Size: 548x486
+  Caption: Figure 1: Generalized geologic map of Venezuela showing the location of the Western 
+Guarico block and the chosen study area
+  Geological Terms: reddish_coloration
+  Context: . 
+  
+Figure 1: Generalized geologic map of Venezuela showing the location of the Western 
+Guarico block and the chosen study area. 
+(www.geology.about.com/library/bl/maps/blvenezuelamap.htm)...
+
+PAGE 15 IMAGES:
+------------------------------
+Image 11: spem_img_015_000_0ed2f6ef
+  File: extracted_spem_complete\images\spem_img_015_000_0ed2f6ef.png
+  Type: well_log
+  Size: 500x380
+  Caption: Figure 2. Key to the generalized geologic map of Venezuela (figure 1 above) 
+(www
+  Geological Terms: RT; basin; SP; RD; reddish_coloration; grayscale_pattern
+  Context: Figure 2. Key to the generalized geologic map of Venezuela (figure 1 above) 
+(www.geology.about.com/library/bl/maps/blvenezuelamap.htm) 
+ 
+The Eastern Venezuela Basin is formed of a series of Late Eoc...
+
+PAGE 16 IMAGES:
+------------------------------
+Image 12: spem_img_016_000_96c91e45
+  File: extracted_spem_complete\images\spem_img_016_000_96c91e45.png
+  Type: figure
+  Size: 100x77
+  Caption: Figure 3    
+        Figure
+La Pascua Formation - Origin of t
+Reistroeffer (2001) described the L
+corresponding to a third order Low
+one million years
+  Geological Terms: RT; RS; SP; RD; grayscale_pattern
+  Context: Tertiary, and onlap onto the underl
+part of the Western Guarico Block 
+ 
+Figure 3    
+        Figure
+La Pascua Formation - Origin of t
+Reistroeffer (2001) described the L
+corresponding to a third orde...
+
+Image 13: spem_img_016_001_33c01a91
+  File: extracted_spem_complete\images\spem_img_016_001_33c01a91.png
+  Type: well_log
+  Size: 100x60
+  Caption: Figure 4      
+ 
+n of the Oligocene cycles 
+ the La Pascua section used in thes
+r Lower Oligocene sequence which
+d that this sequence is composed o
+sted about 125 thousand years
+  Geological Terms: RS; GR; sand; sequence_stratigraphic_content
+  Context: nderlying Cretaceous Tigre Format
+Block  (Figures 1, 2, 3 and 4).  
+Figure 4      
+ 
+n of the Oligocene cycles 
+ the La Pascua section used in thes
+r Lower Oligocene sequence which
+d that this sequenc...
+
+Image 14: spem_img_016_002_d8afd457
+  File: extracted_spem_complete\images\spem_img_016_002_d8afd457.png
+  Type: core_photo
+  Size: 100x114
+  Caption: ion - General D
+e the La Pascua 
+ by Hedberg (19
+Las Mercedes a
+they designated
+drant of the stud
+  Geological Terms: reddish_coloration; grayscale_pattern
+  Context: the driver to something similar to th
+ drilling cores glacial cycles. Hanne
+n cyclicity to Milankovitch cycles. T
+e sections together is interpreted b
+cles, attributed to Milankovitch drive
+er cycles ...
+
+PAGE 22 IMAGES:
+------------------------------
+Image 15: spem_img_022_000_0836e28f
+  File: extracted_spem_complete\images\spem_img_022_000_0836e28f.png
+  Type: other
+  Size: 100x73
+  Geological Terms: SP; sand; grayscale_pattern
+  Context: d widespread sands. 
+onding 
+e below. 
+ffer...
+
+Image 16: spem_img_022_001_b62d8a81
+  File: extracted_spem_complete\images\spem_img_022_001_b62d8a81.png
+  Type: other
+  Size: 100x72
+  Geological Terms: SP; sand; grayscale_pattern
+  Context: d widespread sands. 
+onding 
+e below. 
+ffer...
+
+Image 17: spem_img_022_002_c458c14c
+  File: extracted_spem_complete\images\spem_img_022_002_c458c14c.jpeg
+  Type: other
+  Size: 100x73
+  Geological Terms: grayscale_pattern
+  Context: onding 
+e below. 
+ffer...
+
+Image 18: spem_img_022_003_a640561e
+  File: extracted_spem_complete\images\spem_img_022_003_a640561e.png
+  Type: other
+  Size: 100x71
+  Geological Terms: grayscale_pattern
+  Context: e below. 
+ffer...
+
+PAGE 23 IMAGES:
+------------------------------
+Image 19: spem_img_023_000_e268862f
+  File: extracted_spem_complete\images\spem_img_023_000_e268862f.png
+  Type: well_log
+  Size: 750x855
+  Geological Terms: relative sea level; RD; SP; LST; stacking pattern; RT; GR; sand; reddish_coloration; grayscale_pattern
+  Context: Diagram and maps of corresponding depositional settings by Reistroeffer 
+(2001 ). 
+ 
+Reistroeffer (2001) examined the character and stacking patterns of the E-log respon
+establish the origin of each o...
+
+Image 20: spem_img_023_001_9436d03b
+  File: extracted_spem_complete\images\spem_img_023_001_9436d03b.jpeg
+  Type: other
+  Size: 100x71
+  Geological Terms: grayscale_pattern
+
+Image 21: spem_img_023_002_884039e6
+  File: extracted_spem_complete\images\spem_img_023_002_884039e6.jpeg
+  Type: other
+  Size: 100x71
+  Geological Terms: grayscale_pattern
+
+Image 22: spem_img_023_003_ebdfab4e
+  File: extracted_spem_complete\images\spem_img_023_003_ebdfab4e.jpeg
+  Type: other
+  Size: 100x70
+
+Image 23: spem_img_023_004_82a8897a
+  File: extracted_spem_complete\images\spem_img_023_004_82a8897a.jpeg
+  Type: other
+  Size: 100x73
+  Geological Terms: reddish_coloration; grayscale_pattern
+  Context: stroeffer...
+
+Image 24: spem_img_023_005_c55476b8
+  File: extracted_spem_complete\images\spem_img_023_005_c55476b8.png
+  Type: well_log
+  Size: 100x72
+  Geological Terms: SP; log response; reddish_coloration; grayscale_pattern
+  Context: stroeffer 
+ 
+ 
+ 
+ 
+s of the E-log response to 
+nd bodies, relating them to 
+effer (2001) found that...
+
+TOTAL IMAGES EXTRACTED: 24
