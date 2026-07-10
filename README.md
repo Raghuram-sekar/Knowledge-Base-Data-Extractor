@@ -1,6 +1,67 @@
 # 🌍 Telesto Knowledge Base Data Extractor
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white) ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
+## 📋 Table of Contents
+- [Project Overview](#-project-overview)
+- [What This Project Does](#-what-this-project-does)
+- [Key Innovation](#-key-innovation)
+- [Performance Highlights](#-performance-highlights)
+- [Architecture](#-architecture)
+- [Methodology & Technical Details](#-methodology--technical-details)
+- [Original Documentation & Setup Guide](#-original-documentation--setup-guide)
+
+
+---
+
+## 🎯 Project Overview
+# 🌍 Telesto Knowledge Base Data Extractor
+
+An advanced Python tool for extracting and processing geological documents and well log data. The system automatically classifies PDFs as scanned or normal documents, processes them using IBM's Docling library and Tesseract OCR, and provides AI-powered geological analysis capabilities.
+
+## 🎯 Project Overvi... (Refer to the Original Documentation section below for full details).
+
+---
+
+## 🚀 What This Project Does
+This project implements a secure, high-efficiency data intelligence pipeline, enabling local processing, edge decisions, or automated agentic API workflows.
+
+---
+
+## 🔬 Key Innovation
+| Feature | Traditional Parsing ❌ | Telesto Extractor ✅ | Benefit |
+|---------|------------------------|----------------------|---------|
+| **PDF Extraction** | Basic pdf-plumber text readers | **IBM Docling + Tesseract OCR** | Parses both scanned maps and normal texts |
+| **Well logs** | Ignored or parsed manually | **Automated LAS file parser** | Direct depositional environment detection |
+| **Package Manager** | Slow pip installations | **Fast Astral `uv` tool sync** | Instant virtual environment synchronization |
+
+---
+
+## 📊 Performance Highlights
+- ✅ **Processes geological data** and stratigraphic maps.
+- ✅ **Fast workspace sync** using `uv` packaging.
+- ✅ **Classifies PDF styles** dynamically to select OCR paths.
+
+---
+
+## 🏗️ Architecture
+```mermaid
+graph TD
+    PDF[Geological PDF / LAS File] -->|OCR Scan detection| Classify[PDF Classifier]
+    Classify -->|Scanned PDF| Tesseract[Tesseract OCR Engine]
+    Classify -->|Digital PDF| Docling[IBM Docling Library]
+    Classify -->|Well Log LAS file| LAS[LAS File Reader]
+    Tesseract -->|Extract Text| Extracted[Geological Data Stream]
+    Docling -->|Extract Text| Extracted
+    LAS -->|depositional environment| Extracted
+    Extracted -->|AI geological interpretation| AI[AI Insights scoring]
+```
+
+
+---
+
+## 📖 Original Documentation & Setup Guide
+# 🌍 Telesto Knowledge Base Data Extractor
+
 An advanced Python tool for extracting and processing geological documents and well log data. The system automatically classifies PDFs as scanned or normal documents, processes them using IBM's Docling library and Tesseract OCR, and provides AI-powered geological analysis capabilities.
 
 ## 🎯 Project Overview
