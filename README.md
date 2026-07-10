@@ -1,98 +1,114 @@
-# 🗂️ Multi-Modal Geological RAG System (Telesto)
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![ChromaDB](https://img.shields.io/badge/ChromaDB-blue?style=for-the-badge) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![License](https://img.shields.io/badge/License-MIT-green.svg)
+# 🌍 Telesto Knowledge Base Data Extractor
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white) ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-## 📋 Table of Contents
-- [Project Overview](#🎯-project-overview)
-- [What This Project Does](#🚀-what-this-project-does)
-- [Key Innovation](#🔬-key-innovation)
-- [Performance Highlights](#📊-performance-highlights)
-- [Architecture](#🏗️-architecture)
-- [Methodology & Technical Details](#⚙️-methodology--technical-details)
-- [Project Structure](#📂-project-structure)
-- [Tech Stack](#🧱-tech-stack)
-- [Quick Start](#💻-quick-start)
-
----
+An advanced Python tool for extracting and processing geological documents and well log data. The system automatically classifies PDFs as scanned or normal documents, processes them using IBM's Docling library and Tesseract OCR, and provides AI-powered geological analysis capabilities.
 
 ## 🎯 Project Overview
-Advanced geological data extraction tool combining PyTorch, Qwen2-VL vision-language model, and ChromaDB vector store. Indexes logs and stratigraphic maps using 384-dimensional SentenceTransformer embeddings across 4 collections.
 
----
+This project is designed for **geological data analysis** and **oil & gas exploration** with capabilities for:
+- **Document Processing**: Extract knowledge from research papers, technical reports, and geological documents
+- **Well Log Analysis**: Process LAS files for depositional environment identification
+- **AI-Powered Insights**: Automated geological interpretation with confidence scoring
+- **Knowledge Base Construction**: Build searchable geological knowledge repositories
 
-## 🚀 What This Project Does
-* **The Challenge:** Geological data sheets contain dense tables, graphical stratigraphic logs, and map plots, which standard text-only RAG systems fail to parse or index.
-* **Our Solution:** A multi-modal RAG system using vision-language models (Qwen2-VL) to extract features from charts and index them in vector collections.
+## 📋 Requirements
 
----
+- Python 3.12+
+- [uv](https://docs.astral.sh/uv/) package manager
+- Tesseract OCR (for scanned PDF processing)
 
-## 🔬 Key Innovation
-| Feature | Text-only RAG ❌ | Multi-Modal RAG ✅ | Benefit |
-|---------|------------------|--------------------|---------|
-| **Inputs** | Parses raw string text only | **Text + Graphical stratigraphic logs** | Extracts information from geological charts |
-| **Embeddings** | TF-IDF or text vectors | **SentenceTransformer image+text embeddings** | Aligns visual map features with queries |
-| **VQA** | Basic prompt matching | **Qwen2-VL-2B-Instruct VQA pipeline** | Highly accurate responses to chart queries |
+## 🛠️ Installation
 
----
+1. **Clone the Repository**
 
-## 📊 Performance Highlights
-- ✅ **Indexes 4 vector databases** in ChromaDB.
-- ✅ **Image enhancement** via CLAHE and scaling.
-- ✅ **Dockerized deployment** for production scaling.
+   ```bash
+   git clone https://github.com/Telesto-Amrita/Knowledge-Base-Data-Extractor.git
+   cd Knowledge-Base-Data-Extractor
+   ```
 
----
+2. **Install Dependencies**
 
-## 🏗️ Architecture
-```mermaid
-graph TD
-    PDF[Geological PDF Document] -->|Segment pages| Image[Page Image Render]
-    Image -->|CLAHE & Bilateral Filter| Enhanced[Enhanced Image]
-    Enhanced -->|SentenceTransformer| Embeddings[384-D Vector Embeddings]
-    Embeddings -->|Index| Chroma[ChromaDB Vector Store]
-    Chroma -->|Retrieve context| Qwen[Qwen2-VL Multimodal VQA]
-    Qwen -->|Response| Output[User Answer]
+   This project uses `uv` for dependency management. If you don't have `uv` installed:
+
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+
+   Then install project dependencies:
+
+   ```bash
+   uv sync
+   ```
+
+   Then activate the venv
+
+   ```bash
+   source .venv/bin/activate
+   ```
+
+3. **Install Tesseract OCR** (Required for OCR functionality)
+
+   - **Ubuntu/Debian:**
+     ```bash
+     sudo apt-get update
+     sudo apt-get install tesseract-ocr
+     ```
+   - **macOS:**
+     ```bash
+     brew install tesseract
+     ```
+   - **Windows:**
+     Download and install from [Tesseract GitHub releases](https://github.com/UB-Mannheim/tesseract/wiki)
+
+   **Important:**
+
+   - You may need to set the `TESSDATA_PREFIX` environment variable to the directory containing Tesseract's `tessdata` folder (usually `/usr/share/tesseract/tessdata/` or similar). For example:
+     ```bash
+     export TESSDATA_PREFIX=/usr/share/tesseract/tessdata/
+     ```
+   - This ensures Tesseract can find its language data files.
+
+4. **Set Environment Variables**
+   ```bash
+   cp env.example .env
+   ```
+
+5. **Run Parser**
+   ```bash
+   uv run src/run_parser.py
+   ```
+
+## 📁 Project Structure
+
+```
+Knowledge-Base-Data-Extractor/
+├── docs/                           # 📚 Organized documentation
+│   ├── project-planning/           # Project SOW, strategy, approach
+│   ├── technical-specifications/   # Data pipelines, formats, specs
+│   ├── cost-analysis/             # Financial analysis and estimates
+│   ├── research-data/             # Research materials and analysis
+│   └── system-architecture/       # System design and deployment
+├── src/                           # 💻 Source code
+├── data/                          # 📊 Input/output data
+├── Telesto Data/                  # 🏺 Geological data (well logs, papers)
+├── services/                      # 🔧 Enhanced microservices architecture
+├── frontend/                      # 🖥️ Web dashboard interface
+└── archived-data/                 # 📦 Archived and legacy files
 ```
 
----
+## 📖 Documentation
 
-## ⚙️ Methodology & Technical Details
-### Multimodal Image Preprocessing
-Geological logs contain fine stratigraphic lines that can be blurred during PDF rendering. We apply Contrast Limited Adaptive Histogram Equalization (CLAHE) to enhance contrast borders, followed by bilateral filtering to reduce grain noise while preserving sharp boundaries.
+All project documentation has been organized into logical categories:
 
-### Vector Ingestion and Multimodal Retrieval
-We segment geological PDFs into individual pages. For each page, the pipeline:
-1. Extracts text using OCR, generating 384-dimensional text embeddings.
-2. Extracts visual tables, generating aligned image embeddings using SentenceTransformers.
-3. Indexes both vector channels into 4 separate collections in ChromaDB (text, metadata, table features, map outlines).
-When a user asks a question, ChromaDB executes a hybrid retrieval search, returning relevant image regions as context for the Qwen2-VL model to generate natural language answers.
+- **📋 Project Planning**: [docs/project-planning/](./docs/project-planning/) - SOW, project approach, strategy
+- **🔧 Technical Specs**: [docs/technical-specifications/](./docs/technical-specifications/) - Data pipelines, formats
+- **💰 Cost Analysis**: [docs/cost-analysis/](./docs/cost-analysis/) - Financial planning and estimates  
+- **📊 Research Data**: [docs/research-data/](./docs/research-data/) - Research materials and analysis
+- **🏗️ System Architecture**: [docs/system-architecture/](./docs/system-architecture/) - System design guides
 
----
-
-## 📂 Project Structure
-```
-telesto_rag/
-├── pipeline.py          # Document ingestion and vector index pipeline
-├── extractor.py         # Qwen2-VL VQA inference loops
-├── requirements.txt     # Neural network and database dependencies
-└── Dockerfile           # Multi-stage Docker builder configuration
-```
+See [docs/README.md](./docs/README.md) for complete documentation index.
 
 ---
 
-## 🧱 Tech Stack
-- PyTorch and Qwen2-VL vision-language AI models
-- ChromaDB vector database collections
-- Bilateral filters and Contrast Limited Adaptive Histogram Equalization (CLAHE) for image preprocessing
 
 ---
-
-## 💻 Quick Start
-To configure and run the project locally, clone the repository and execute the setup instructions:
-
-```bash
-git clone https://github.com/Raghuram-sekar/Knowledge-Base-Data-Extractor.git
-cd Knowledge-Base-Data-Extractor
-
-# Execute local setup commands:
-pip install -r requirements.txt
-python pipeline.py
-```
