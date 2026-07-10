@@ -1,24 +1,8 @@
-
-.history/
-
-# Virtual environment
+__pycache__/
+venv/
 .venv/
-
-# data extractor outputs
-data/
-output/
-
-# exclude raw data
-*.pdf
-*.zip
-*.png
-*.jpg
-*.jpeg
-
-# exclude all the __pycache__ directories
-**/__pycache__/
-.DS_Store
-*.egg-info/
-
-# exclude .env files
-.env*
+.env
+*.pkl
+*.csv
+*.pyc
+.ipynb_checkpoints/

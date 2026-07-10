@@ -1,0 +1,67 @@
+{
+  "vectorization_stats": {
+    "start_time": "2025-11-25T10:41:32.877203",
+    "text_chunks": 129,
+    "image_chunks": 24,
+    "keyword_chunks": 5,
+    "combined_chunks": 23,
+    "total_embeddings": 181,
+    "collections_created": 4,
+    "end_time": "2025-11-25T10:41:35.363812"
+  },
+  "source_document": {
+    "file_path": "data\\SPEM_Strata_Log_Signature_SS.pdf",
+    "file_size": 857710,
+    "extraction_date": "2025-11-25T10:11:06.139182",
+    "total_pages": 23,
+    "document_metadata": {
+      "format": "PDF 1.7",
+      "title": "",
+      "author": "Puskar Pramanik",
+      "subject": "",
+      "keywords": "",
+      "creator": "Microsoft\u00ae Word for Microsoft 365",
+      "producer": "Microsoft\u00ae Word for Microsoft 365",
+      "creationDate": "D:20250821102616+05'30'",
+      "modDate": "D:20250821102616+05'30'",
+      "trapped": "",
+      "encryption": null
+    }
+  },
+  "collections": {
+    "spem_text_content": {
+      "description": {
+        "description": "Primary text content from SPEM document pages"
+      },
+      "count": 129
+    },
+    "spem_image_metadata": {
+      "description": {
+        "description": "Image descriptions and geological analysis"
+      },
+      "count": 24
+    },
+    "spem_geological_terms": {
+      "description": {
+        "description": "Geological keywords and their contexts"
+      },
+      "count": 5
+    },
+    "spem_combined_content": {
+      "description": {
+        "description": "Multi-modal content combining text and images"
+      },
+      "count": 23
+    }
+  },
+  "embedding_model": "all-MiniLM-L6-v2",
+  "embedding_dimension": 384,
+  "geological_categories": [
+    "well_logs",
+    "sequence_stratigraphy",
+    "depositional_environments",
+    "lithology",
+    "patterns"
+  ],
+  "creation_date": "2025-11-25T10:41:35.586096"
+}

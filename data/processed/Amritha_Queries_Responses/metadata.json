@@ -1,0 +1,59 @@
+{
+  "source_file": "data\\raw\\Amritha_Queries_Responses.pdf",
+  "processing_timestamp": "2025-11-05T12:40:56.115632",
+  "ocr_enabled": true,
+  "ocr_engine": "TesseractEngine",
+  "storage_backend": "LocalStorage",
+  "output_directory": "data\\processed\\Amritha_Queries_Responses",
+  "markdown_file": "Amritha_Queries_Responses.md",
+  "page_count": 6,
+  "images_generated": true,
+  "images_saved": 4,
+  "image_files": [
+    "Amritha_Queries_Responses_image_1.png",
+    "Amritha_Queries_Responses_image_2.png",
+    "Amritha_Queries_Responses_image_3.png",
+    "Amritha_Queries_Responses_image_4.png"
+  ],
+  "image_descriptions": {
+    "Amritha_Queries_Responses_image_1.png": "Image 1 extracted from PDF",
+    "Amritha_Queries_Responses_image_2.png": "Image 2 extracted from PDF",
+    "Amritha_Queries_Responses_image_3.png": "Image 3 extracted from PDF",
+    "Amritha_Queries_Responses_image_4.png": "Image 4 extracted from PDF"
+  },
+  "tables_extracted": true,
+  "formulas_extracted": true,
+  "figures_extracted": true,
+  "processing_options": {
+    "image_format": "PNG",
+    "image_quality": 95,
+    "image_dpi": 300,
+    "image_scale": 2.0,
+    "extract_tables": true,
+    "extract_formulas": true,
+    "extract_figures": true,
+    "force_full_page_ocr": true,
+    "input_storage_type": "LOCAL"
+  },
+  "document_structure": {
+    "has_tables": false,
+    "has_figures": true,
+    "has_formulas": false,
+    "text_length": 5823,
+    "images_count": 4
+  },
+  "performance_metrics": {
+    "file_size_mb": 0.47,
+    "processing_time_seconds": 2563.429,
+    "pages_per_second": 0.0,
+    "mb_per_second": 0.0,
+    "timing_breakdown": {
+      "pipeline_setup": 0.005,
+      "document_conversion": 2563.06,
+      "markdown_generation": 0.277,
+      "markdown_save": 0.003,
+      "image_processing": 0.05,
+      "total_processing": 2563.429
+    }
+  }
+}

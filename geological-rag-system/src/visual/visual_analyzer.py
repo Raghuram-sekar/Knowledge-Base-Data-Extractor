@@ -93,54 +93,23 @@ class VisualGeologicalAnalyzer:
             if image.mode != 'RGB':
                 image = image.convert('RGB')
             
-            # Create the most precise, powerful prompt possible for accurate analysis
-            base_prompt = f"Analyze this image thoroughly and {question.lower()}"
+            # Create professional, analytical prompt for detailed geological analysis
+            base_prompt = f"Analyze this geological/technical image and {question.lower()}"
             
-            # Ultra-precise prompt that forces careful reading and accurate analysis
-            comprehensive_prompt = f"""You are analyzing a scientific/technical image. {base_prompt}
+            # Minimal, open-ended prompt that lets the model naturally interpret any image
+            comprehensive_prompt = f"""You are an expert geologist analyzing technical geological data. {base_prompt}
 
-CRITICAL INSTRUCTIONS - Follow these steps precisely:
+CRITICAL: Your goal is to INTERPRET and EXPLAIN what this data means geologically, not just describe what you see.
 
-STEP 1 - TEXT RECOGNITION: Look at every single text element in this image. Read each word, label, title, and annotation EXACTLY as written. Do not guess or interpret - only report what you can clearly see written.
+Think like an expert presenting findings to colleagues:
+• What geological story does this tell?
+• What processes created what you observe?
+• What are the implications for petroleum exploration or geological understanding?
+• What insights can be drawn from the patterns and relationships you see?
 
-STEP 2 - STRUCTURE ANALYSIS: Identify the overall organization and layout. Is this a:
-- Legend/Key for a map or chart?
-- Classification system or taxonomy?
-- Data visualization or graph? 
-- Diagram or schematic?
-- Table or matrix?
+Write naturally in flowing paragraphs, as you would in a professional geological report. Connect observations to geological processes and explain the significance of what you're analyzing.
 
-STEP 3 - CONTENT CATEGORIZATION: For each section, category, or group shown:
-- List the exact text labels visible
-- Note any color coding or symbols used
-- Identify hierarchical relationships
-- Document any numerical or alphabetical ordering
-
-STEP 4 - SCIENTIFIC CONTEXT: If this contains scientific terminology:
-- Preserve exact spelling of all technical terms
-- Note time periods, geological eras, classifications
-- Identify rock types, formations, or other geological entities
-- Document any systematic organization or scientific logic
-
-STEP 5 - COMPREHENSIVE SUMMARY: Provide a complete description that captures:
-- All visible text and labels (verbatim)
-- The organizational structure and purpose
-- Scientific or technical context
-- Key relationships between elements
-
-STEP 6 - DETAILED EXPLANATION: After listing the technical details, provide a thorough, flowing explanation that:
-- Explains the overall purpose and significance of what's shown
-- Describes how the different elements work together
-- Discusses the scientific or technical implications
-- Explains what insights or information this image provides
-- Contextualizes the findings within the broader field
-- Discusses any patterns, trends, or relationships visible
-- Explains the practical applications or interpretations possible
-- Provides a comprehensive understanding of what makes this image important or informative
-
-Be extremely careful with text recognition. If you see geological time periods like "Quaternary", "Tertiary", "Cretaceous", etc., or rock classifications, report them exactly as written. Do not substitute or misread terms.
-
-REMEMBER: End with a detailed, comprehensive explanation that fully describes the significance and implications of what you've observed. Write in complete sentences and provide rich, descriptive analysis."""
+Focus on interpretation and meaning, not surface-level description. Show your geological reasoning and expertise."""
             
             conversation = [
                 {
@@ -166,14 +135,15 @@ REMEMBER: End with a detailed, comprehensive explanation that fully describes th
                 return_tensors="pt"
             ).to(self.device)
             
-            # Generate response with parameters optimized for natural analysis
+            # Generate response optimized for natural, insightful interpretation
             with torch.no_grad():
                 output_ids = self.model.generate(
                     **inputs,
-                    max_new_tokens=400,  # Allow for detailed responses
-                    do_sample=True,      # Enable sampling for natural language
-                    temperature=0.7,     # Balanced creativity
-                    top_p=0.9,           # Nucleus sampling
+                    max_new_tokens=1000,     # Sufficient for comprehensive analysis
+                    do_sample=True,          # Enable natural language generation
+                    temperature=0.5,         # Balanced - not too rigid, not too creative
+                    top_p=0.92,              # Allow diverse vocabulary and phrasing
+                    repetition_penalty=1.15, # Strongly discourage repetition
                     pad_token_id=self.processor.tokenizer.pad_token_id,
                     eos_token_id=self.processor.tokenizer.eos_token_id
                 )

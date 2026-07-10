@@ -1,0 +1,72 @@
+{
+  "source_file": "data\\SPEM_Strata_Log_Signature_SS.pdf",
+  "processing_timestamp": "2025-12-06T12:53:12.987540",
+  "ocr_enabled": true,
+  "ocr_engine": "TesseractEngine",
+  "storage_backend": "LocalStorage",
+  "output_directory": "extracted_spem_docling\\SPEM_Strata_Log_Signature_SS",
+  "markdown_file": "SPEM_Strata_Log_Signature_SS.md",
+  "page_count": 23,
+  "images_generated": true,
+  "images_saved": 22,
+  "image_files": [
+    "SPEM_Strata_Log_Signature_SS_image_1.png",
+    "SPEM_Strata_Log_Signature_SS_image_2.png",
+    "SPEM_Strata_Log_Signature_SS_image_3.png",
+    "SPEM_Strata_Log_Signature_SS_image_4.png",
+    "SPEM_Strata_Log_Signature_SS_image_5.png",
+    "SPEM_Strata_Log_Signature_SS_image_6.png",
+    "SPEM_Strata_Log_Signature_SS_image_7.png",
+    "SPEM_Strata_Log_Signature_SS_image_8.png",
+    "SPEM_Strata_Log_Signature_SS_image_9.png",
+    "SPEM_Strata_Log_Signature_SS_image_10.png",
+    "SPEM_Strata_Log_Signature_SS_image_11.png",
+    "SPEM_Strata_Log_Signature_SS_image_12.png",
+    "SPEM_Strata_Log_Signature_SS_image_13.png",
+    "SPEM_Strata_Log_Signature_SS_image_14.png",
+    "SPEM_Strata_Log_Signature_SS_image_15.png",
+    "SPEM_Strata_Log_Signature_SS_image_16.png",
+    "SPEM_Strata_Log_Signature_SS_image_17.png",
+    "SPEM_Strata_Log_Signature_SS_image_18.png",
+    "SPEM_Strata_Log_Signature_SS_image_19.png",
+    "SPEM_Strata_Log_Signature_SS_image_20.png",
+    "SPEM_Strata_Log_Signature_SS_image_21.png",
+    "SPEM_Strata_Log_Signature_SS_image_22.png"
+  ],
+  "image_descriptions": {},
+  "tables_extracted": true,
+  "formulas_extracted": true,
+  "figures_extracted": true,
+  "processing_options": {
+    "image_format": "PNG",
+    "image_quality": 95,
+    "image_dpi": 300,
+    "image_scale": 2.0,
+    "extract_tables": true,
+    "extract_formulas": true,
+    "extract_figures": true,
+    "force_full_page_ocr": true,
+    "input_storage_type": "LOCAL"
+  },
+  "document_structure": {
+    "has_tables": false,
+    "has_figures": true,
+    "has_formulas": false,
+    "text_length": 36819,
+    "images_count": 22
+  },
+  "performance_metrics": {
+    "file_size_mb": 0.82,
+    "processing_time_seconds": 562.731,
+    "pages_per_second": 0.04,
+    "mb_per_second": 0.0,
+    "timing_breakdown": {
+      "pipeline_setup": 0.006,
+      "document_conversion": 562.155,
+      "markdown_generation": 0.073,
+      "markdown_save": 0.003,
+      "image_processing": 0.422,
+      "total_processing": 562.731
+    }
+  }
+}
