@@ -7,6 +7,8 @@
 - [Key Innovation](#🔬-key-innovation)
 - [Performance Highlights](#📊-performance-highlights)
 - [Architecture](#🏗️-architecture)
+- [Methodology & Technical Details](#⚙️-methodology--technical-details)
+- [Project Structure](#📂-project-structure)
 - [Tech Stack](#🧱-tech-stack)
 - [Quick Start](#💻-quick-start)
 
@@ -40,7 +42,39 @@ Advanced geological data extraction tool combining PyTorch, Qwen2-VL vision-lang
 ---
 
 ## 🏗️ Architecture
-```\n[Core Architectural Components & Datastore Framework]\n```
+```mermaid
+graph TD
+    PDF[Geological PDF Document] -->|Segment pages| Image[Page Image Render]
+    Image -->|CLAHE & Bilateral Filter| Enhanced[Enhanced Image]
+    Enhanced -->|SentenceTransformer| Embeddings[384-D Vector Embeddings]
+    Embeddings -->|Index| Chroma[ChromaDB Vector Store]
+    Chroma -->|Retrieve context| Qwen[Qwen2-VL Multimodal VQA]
+    Qwen -->|Response| Output[User Answer]
+```
+
+---
+
+## ⚙️ Methodology & Technical Details
+### Multimodal Image Preprocessing
+Geological logs contain fine stratigraphic lines that can be blurred during PDF rendering. We apply Contrast Limited Adaptive Histogram Equalization (CLAHE) to enhance contrast borders, followed by bilateral filtering to reduce grain noise while preserving sharp boundaries.
+
+### Vector Ingestion and Multimodal Retrieval
+We segment geological PDFs into individual pages. For each page, the pipeline:
+1. Extracts text using OCR, generating 384-dimensional text embeddings.
+2. Extracts visual tables, generating aligned image embeddings using SentenceTransformers.
+3. Indexes both vector channels into 4 separate collections in ChromaDB (text, metadata, table features, map outlines).
+When a user asks a question, ChromaDB executes a hybrid retrieval search, returning relevant image regions as context for the Qwen2-VL model to generate natural language answers.
+
+---
+
+## 📂 Project Structure
+```
+telesto_rag/
+├── pipeline.py          # Document ingestion and vector index pipeline
+├── extractor.py         # Qwen2-VL VQA inference loops
+├── requirements.txt     # Neural network and database dependencies
+└── Dockerfile           # Multi-stage Docker builder configuration
+```
 
 ---
 
@@ -60,5 +94,5 @@ cd Knowledge-Base-Data-Extractor
 
 # Execute local setup commands:
 pip install -r requirements.txt
-# Run the geological extractor pipeline
+python pipeline.py
 ```
